@@ -1,0 +1,78 @@
+# Basic Settings
+#
+#fontName         = "Source Code Pro"
+#fontSize         = 13
+
+softWrap         = true
+softTabs         = true
+tabSize          = 4
+
+spellChecking    = false
+
+# Display the name of the home directory.
+#
+#windowTitle      = "$TM_DISPLAYNAME — ${CWD/^.*\///}"
+windowTitle = '${TM_FILEPATH:?${TM_FILEPATH/${CWD}.//}:$TM_DISPLAYNAME}$windowTitleProject$windowTitleSCM'
+
+# Extra files to include
+#
+myIncludes = ".tm_properties,.htaccess,.gitignore,.gitignore_global,.hgrc,.hgignore_global"
+fileBrowserGlob  = "{*,$myIncludes}"
+include = "{$include, $myIncludes}"
+
+
+# Hide log, vendor and tmp directories from search popups.
+#
+myExcludes = "{log, tmp, *.tmproj}"
+excludeInFileChooser  = "{$excludeInFileChooser, $myExcludes}" 
+excludeInFolderSearch = "{$excludeInFolderSearch, $myExcludes}" 
+
+# If you also want to hide them from your project manager pane, add
+# the following line to your project's local .tm_properties.
+#
+excludeInBrowser      = "{$excludeInBrowser,log,tmp}" 
+
+# Configure git and hg
+#
+#TM_HG  = "/opt/local/bin/hg"
+#TM_GIT = "/opt/local/bin/git"
+
+# TM Projects
+#
+# projectDirectory    = "$CWD"
+# windowTitle         = "$TM_DISPLAYNAME — Project Name"
+
+
+# File type specific configuration
+#
+[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
+binary           = true
+
+[ .git/COMMIT_EDITMSG ]
+spellChecking    = true
+spellingLanguage = 'en'
+
+# per-filetype rules
+[ *.{txt,md,mdown,markdown,plist} ]
+spellChecking   = true
+spellingLanguage = 'en'
+tabSize         = 4
+softWrap        = false
+softTabs        = false
+wrapColumn      = 100
+showInvisibles  = true
+
+[ *.{rb,yml,slim,haml,erb,rhtml,ru} ]
+tabSize         = 2
+# softTabs        = true
+
+[ source.coffee} ]
+tabSize         = 2
+# softTabs        = true
+
+# [ source.javascript ]
+# tabSize         = 4
+# softTabs        = true
+
+[ "{README,INSTALL,LICENSE,TODO}" ]
+fileType        = "text.plain"
