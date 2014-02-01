@@ -11,7 +11,7 @@ ZSH_THEME='amuse'
 
 # Example aliases
 alias zshconfig='mvim ~/.zshrc'
-alias ohmyzsh='mvim ~/.oh-my-zsh'
+#alias ohmyzsh='mvim ~/.oh-my-zsh'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -56,18 +56,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/Applications:/Applications/Postgres93.app/Contents/MacOS/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='mvim'
-else
-    export EDITOR='mvim'
-fi
-
-# Compilation flags
-#export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# Default editor
+export EDITOR='vim'
+export VISUAL='mvim'
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -75,8 +66,12 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # autojump activation
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
-# Load aliases and functions files
+# load my aliases and functions
 if [[ -s "$HOME/.dotfiles/zsh/aliases.zsh" && -s "$HOME/.dotfiles/zsh/functions.zsh" ]]; then
   source "$HOME/.dotfiles/zsh/aliases.zsh"
   source "$HOME/.dotfiles/zsh/functions.zsh"
 fi
+
+# set correct locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
