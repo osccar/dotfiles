@@ -7,7 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME='dst'
-ZSH_THEME='amuse'
+#ZSH_THEME='amuse'
+ZSH_THEME='agnoster'
 
 # Example aliases
 alias zshconfig='mvim ~/.zshrc'
@@ -75,3 +76,6 @@ fi
 # set correct locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
